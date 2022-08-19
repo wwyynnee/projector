@@ -1,0 +1,14 @@
+{
+  "name": "projector",
+  "version": "1.0.0",
+  "main": "script.js",
+  "dependencies": {
+    "sass": "^1.54.4"
+  },
+  "scripts": {
+    "start": "sass --watch scss/styles.scss style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
