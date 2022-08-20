@@ -1,20 +1,12 @@
 {
   "name": "projector",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "",
   "dependencies": {
-    "express": "^4.18.1",
-    "express-rate-limit": "^6.5.1",
-    "html-minifier": "^4.0.0",
-    "markdown-it": "^13.0.1",
-    "sass": "^1.54.4",
-    "sendmail": "^1.6.1",
-    "validator": "^13.7.0",
-    "xss": "^1.0.14"
+    "sass": "^1.54.4"
   },
   "scripts": {
-    "build": "node server.js",
-    "start": "sass --watch views/scss/styles.scss views/style.css"
+    "start": "sass --watch scss/styles.scss style.css"
   },
   "author": "",
   "license": "ISC",
