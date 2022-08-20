@@ -6,10 +6,68 @@
   <meta name="viewport" content="width=device-width">
   <title>Projector</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
 </head>
 
 <body>
-  <script src="script.js"></script>
+  <div class="wrapper">
+    <div class="wrapper__content">
+      <h1>Домашний кинотеатр</h1>
+      <p>Топовый проектор</p>
+      <button>Купить</button>
+      <img src="assets/images/img-1.jpeg" alt />
+    </div>
+    <div class="wrapper__content">
+      <h2>Посмотрите, как это работает</h2>
+      <p>Технологически умный и быстрый проектор</p>
+      <video src="assets/video/video.MP4" controls></video>
+    </div>
+    <div class="wrapper__content">
+      <h2>Характеристики проектора</h2>
+      <div class="wrapper__item">
+        <div class="wrapper__container">
+          <h3>Операционная система и Wi-Fi</h3>
+          <p>Проектор на операционной системе Android 9.0. Подключение Wi-Fi 2.4/5 Ггц</p>
+        </div>
+        <div class="wrapper__container">
+          <img src="assets/images/img-4.jpeg" alt />
+        </div>
+      </div>
+      <div class="wrapper__item">
+        <div class="wrapper__container">
+          <h3>Разрешение и цветопередача</h3>
+          <p>Разрешение UHD 16:9. Отличная цветопередача и картинка (без пикселей). Световой поток 6500 люменов</p>
+        </div>
+        <div class="wrapper__container">
+          <img src="assets/images/img-3.jpg" alt />
+        </div>
+      </div>
+      <div class="wrapper__item">
+        <div class="wrapper__container">
+          <h3>Динамик и подключение</h3>
+          <p>Встроенный динамик. Возможность подключения HDMI / Wi-Fi / USB</p>
+        </div>
+        <div class="wrapper__container">
+          <img src="assets/images/img-2.jpg" alt />
+        </div>
+      </div>
+    </div>
+    <div class="wrapper__content">
+      <div class="wrapper__content">
+        <h2>Фотографии проектора</h2>
+        <p>Современный домашний кинотеатр</p>
+        <div class="slider">
+          <div class="slider__arrow" onclick="left()">❮</div>
+          <div class="slider__images">
+            <img src="assets/photo/photo-1.jpg" id="slider" alt>
+          </div>
+          <div class="slider__arrow" onclick="right()">❯</div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper__content"></div>
+    <div class="wrapper__content"></div>
+  </div>
 </body>
 
 </html>

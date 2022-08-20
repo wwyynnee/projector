@@ -1,4 +1,136 @@
-html, body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+$bg: #f5f5f5;
+$color: #ff1717;
+$text-color: #919191;
+$text-color-2: #616161;
+
+html, body, .wrapper {
+  font-family: "Roboto", sans-serif;
   height: 100%;
   width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 0;
+    h1 {
+      font-size: 4.75rem;
+      font-weight: 600;
+      margin: 1.2rem;
+    }
+    h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin: 1.2rem;
+    }
+    p {
+      font-size: 1.375rem;
+      color: $text-color;
+      font-weight: 300;
+      margin: 1.3rem;
+    }
+    button {
+      background-color: $color;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 0 60px;
+      font-size: 1rem;
+      height: 60px;
+      margin: 1rem 0;
+      color: white;
+      outline: none;
+      border: 0;
+    }
+    img {
+      width: 60%;
+    }
+    video {
+      margin: 2rem 0;
+      width: 85%;
+    }
+    &:nth-child(2n) {
+      background-color: $bg;
+      p {
+        color: $text-color-2;
+      }
+    }
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5rem 0;
+      width: 100%;
+      height: 100vh;
+      user-select: none;
+      &__arrow {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 3rem;
+        padding: 0 2rem;
+        height: 100%;
+      }
+      &__images {
+        width: 100%;
+        img {
+          border-radius: 5px;
+          object-fit: cover;
+          height: 100vh;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      .wrapper__container {
+        align-items: flex-start !important;
+      }
+    }
+    .wrapper__container {
+      display: flex;
+      text-align: left;
+      width: 50%;
+      flex-direction: column;
+      &:nth-child(2n) {
+        align-items: flex-end;
+      }
+      h3 {
+        font-weight: 400;
+        font-size: 1.625rem;
+      }
+      p {
+        margin: 1rem 0;
+      }
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
 }
