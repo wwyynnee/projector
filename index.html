@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="style.css" type="text/css" />
   <link rel="icon" href="assets/icons/projector.png" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <title>Купить проектор</title>
 </head>
@@ -13,9 +15,9 @@
 <body>
   <div class="wrapper">
     <div class="wrapper__content">
-      <h1>Домашний кинотеатр</h1>
+      <h1>Проектор домашний кинотеатр</h1>
       <p>Топовый проектор</p>
-      <button>Купить</button>
+      <button onclick="active()" class="active">Купить</button>
       <img src="assets/images/img-1.jpeg" alt />
     </div>
     <div class="wrapper__content">
@@ -28,7 +30,8 @@
       <div class="wrapper__item">
         <div class="wrapper__container">
           <h3>Операционная система и Wi-Fi</h3>
-          <p>Проектор на операционной системе Android 9.0. Подключение Wi-Fi 2.4/5 Ггц. Смотрите видео с Youtube, подключайтесь с телефона</p>
+          <p>Проектор на операционной системе Android 9.0. Подключение Wi-Fi 2.4/5 Ггц. Смотрите видео с Youtube,
+            подключайтесь с телефона</p>
         </div>
         <div class="wrapper__container">
           <img src="assets/images/img-4.jpeg" alt />
@@ -37,7 +40,8 @@
       <div class="wrapper__item">
         <div class="wrapper__container">
           <h3>Разрешение и цветопередача</h3>
-          <p>Разрешение экрана UHD 16:9. Отличная цветопередача и картинка, никаких пикселей, чёткое отображение изображения. Световой поток 6500 люменов</p>
+          <p>Разрешение экрана UHD 16:9. Отличная цветопередача и картинка, никаких пикселей, чёткое отображение
+            изображения. Световой поток 6500 люменов</p>
         </div>
         <div class="wrapper__container">
           <img src="assets/images/img-3.jpg" alt />
@@ -46,7 +50,9 @@
       <div class="wrapper__item">
         <div class="wrapper__container">
           <h3>Динамик и подключение</h3>
-          <p>Встроенный динамик создаст объёмную звуковую картину, как задумал звукорежиссер, а ещё позволяет сделать аудиосистему вовсе незаметной. Подключения через телефон, кабеля HDMI, Wi-Fi или USB, вы без труда выведите картинку и звук на домашний кинотеатр</p>
+          <p>Встроенный динамик создаст объёмную звуковую картину, как задумал звукорежиссер, а ещё позволяет сделать
+            аудиосистему вовсе незаметной. Подключения через телефон, кабеля HDMI, Wi-Fi или USB, вы без труда выведите
+            картинку и звук на домашний кинотеатр</p>
         </div>
         <div class="wrapper__container">
           <img src="assets/images/img-2.jpg" alt />
@@ -118,9 +124,50 @@
       <span>Проектор</span>
       <p>Создайте эффект присутствия на месте событий!</p>
       <span>9 900 ₽</span>
-      <button>Купить сейчас</button>
+      <button onclick="active()" class="active">Купить сейчас</button>
+    </div>
+    <div class="modal">
+      <div class="modal__items">
+        <p>Ваш заказ:</p>
+        <hr />
+        <form action="/submit">
+          <span>Ваше имя</span>
+          <input name="name" type="text" required />
+          <span>Кол-во товара</span>
+          <input name="sum" type="number" value="1" required />
+          <span>Ваш Email</span>
+          <input name="email" type="email" required />
+          <span>Ваш телефон</span>
+          <input name="number" type="text" required />
+          <input type="submit" class="submit" value="Оформить заказ" />
+        </form>
+      </div>
+      <div class="modal__close">
+        <svg class="t706__cartwin-close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
+            <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+            <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
+  <script>
+    $(".modal").hide()
+    $("*").on("click", (e) => {
+      if ($(e.target).is(".active, .modal__items, .modal__items p, .modal__items form, .modal__items form input")) {
+        return false
+      }
+
+      $(".modal").hide()
+      $("body").css("overflow-y", "scroll")
+    })
+    const active = () => {
+      $(".modal").css("display", "flex")
+      $(".modal").css("backgroundColor", "rgba(0, 0, 0, .8)")
+      $("body").css("overflow", "hidden")
+    }
+  </script>
 </body>
 
 </html>

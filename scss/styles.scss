@@ -166,3 +166,58 @@ a {
     }
   }
 }
+.modal {
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  &__items {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 35rem;
+    p {
+      font-size: 1.375rem;
+      font-weight: 500;
+      margin: 1rem 0;
+    }
+    hr {
+      border-color: #88888830;
+      margin-bottom: 1rem;
+    }
+    span {
+      font-weight: 400;
+      color: $text-color-2;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        background-color: #88888820;
+        border-radius: 5px;
+        margin: 1rem 0;
+        padding: 1rem;
+        outline: none;
+        border: none;
+      }
+      .submit {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #000000;
+      }
+    }
+  }
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+  }
+}
