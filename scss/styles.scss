@@ -12,10 +12,14 @@ $text-color: #919191;
 $text-color-2: #616161;
 $text-color-3: #6e6e6e;
 
-html, body, .wrapper {
+html, body {
   font-family: "Roboto", sans-serif;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -25,9 +29,12 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 1920px;
+  height: 100%;
+  width: 100%;
   &__content {
     display: flex;
-    width: 100%;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -36,11 +43,26 @@ a {
       font-size: 4.75rem;
       font-weight: 600;
       margin: 1.2rem;
+      @media screen and (max-width: 768px) {
+        font-size: 4rem;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 3.5rem;
+      }
+      @media screen and (max-width: 320px) {
+        font-size: 3rem;
+      }
     }
     h2 {
       font-size: 3rem;
       font-weight: 500;
       margin: 1.2rem;
+      @media screen and (max-width: 480px) {
+        font-size: 2.75rem;
+      }
+      @media screen and (max-width: 320px) {
+        font-size: 2rem;
+      }
     }
     p {
       font-size: 1.375rem;
@@ -63,10 +85,15 @@ a {
     }
     img {
       width: 60%;
+      max-width: 1152px;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
     }
     video {
       margin: 2rem 0;
       width: 85%;
+      max-width: 1920px;
     }
     &:nth-child(2n) {
       background-color: $bg;
@@ -83,36 +110,11 @@ a {
         color: $text-color;
       }
     }
-    .slider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 5rem 0;
-      width: 100%;
-      height: 100vh;
-      user-select: none;
-      &__arrow {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-weight: 400;
-        font-size: 3rem;
-        padding: 0 2rem;
-        height: 100%;
-      }
-      &__images {
-        width: 100%;
-        img {
-          border-radius: 5px;
-          object-fit: cover;
-          height: 100vh;
-          width: 100%;
-        }
-      }
-    }
     .specifications {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
       &__container {
         display: flex;
         flex-direction: column;
@@ -130,8 +132,83 @@ a {
           font-size: 0.875rem;
           color: $text-color-3;
         }
+        @media screen and (max-width: 1167px) {
+          width: 25%;
+          margin: 0;
+        }
+        @media screen and (max-width: 768px) {
+          width: 40%;
+        }
+        @media screen and (max-width: 320px) {
+          width: 100%;
+        }
       }
     }
+  }
+  .slider {
+    width: 80%;
+    height: 50%;
+    overflow: hidden;
+    margin-top: 5rem;
+  }
+  .navigation {
+    display: flex;
+    position: relative;
+    bottom: 1.5rem;
+    justify-content: center;
+  }
+  .bar {
+    width: 30px;
+    height: 8px;
+    margin: 6px;
+    cursor: pointer;
+    background-color: #000;
+    opacity: .5;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  .slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    input[name="r"] {
+      position: absolute;
+      display: none;
+    }
+    @media screen and (max-width: 600px) {
+      height: 25rem;
+    }
+    @media screen and (max-width: 480px) {
+      height: 20rem;
+    }
+    @media screen and (max-width: 375px) {
+      height: 15rem;
+    }
+  }
+  .slide {
+    width: 25%;
+    transition: all 0.6s ease;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  #r1:checked ~ .s1 {
+    margin-left: 0;
+  }
+  #r2:checked ~ .s1 {
+    margin-left: -25%;
+  }
+  #r3:checked ~ .s1 {
+    margin-left: -50%;
+  }
+  #r4:checked ~ .s1 {
+    margin-left: -75%;
   }
   &__item {
     display: flex;
@@ -139,6 +216,14 @@ a {
     align-items: center;
     justify-content: center;
     padding: 5rem;
+    max-width: 1920px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse !important;
+      padding: 0 4rem;
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0 1rem;
+    }
     &:nth-child(2n) {
       flex-direction: row-reverse;
       .wrapper__container {
@@ -150,6 +235,10 @@ a {
       text-align: left;
       width: 50%;
       flex-direction: column;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 1rem 0;
+      }
       &:nth-child(2n) {
         align-items: flex-end;
       }
@@ -166,6 +255,7 @@ a {
     }
   }
 }
+
 .modal {
   align-items: center;
   justify-content: center;
@@ -180,6 +270,9 @@ a {
     flex-direction: column;
     padding: 2rem;
     width: 30rem;
+    @media screen and (max-width: 768px) {
+      padding: 1rem;
+    }
     p {
       font-size: 1.375rem;
       font-weight: 500;
@@ -213,11 +306,14 @@ a {
       }
     }
   }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
   &__close {
+    user-select: none;
     cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1rem;
+    color: black;
+    font-size: 2.5rem;
   }
 }

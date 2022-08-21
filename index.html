@@ -8,8 +8,7 @@
   <link rel="icon" href="assets/icons/projector.png" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  <title>Купить проектор</title>
+  <title>Проектор домашний кинотеатр</title>
 </head>
 
 <body>
@@ -59,16 +58,33 @@
         </div>
       </div>
     </div>
-    <div class="wrapper__content">
-      <div class="wrapper__content">
-        <h2>Фотографии проектора</h2>
-        <p>Современный домашний кинотеатр</p>
-        <div class="slider">
-          <div class="slider__arrow" onclick="left()">❮</div>
-          <div class="slider__images">
-            <img src="assets/photo/photo-1.jpg" id="slider" alt>
+    <div class="wrapper__content wrapper__slider">
+      <h2>Фотографии проектора</h2>
+      <p>Современный домашний кинотеатр</p>
+      <div class="slider">
+        <div class="slides">
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+          <input type="radio" name="r" id="r4">
+          <div class="slide s1">
+            <img src="assets/photo/photo-1.jpg" alt>
           </div>
-          <div class="slider__arrow" onclick="right()">❯</div>
+          <div class="slide">
+            <img src="assets/photo/photo-2.jpg" alt>
+          </div>
+          <div class="slide">
+            <img src="assets/photo/photo-3.jpg" alt>
+          </div>
+          <div class="slide">
+            <img src="assets/photo/photo-4.jpeg" alt>
+          </div>
+        </div>
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+          <label for="r4" class="bar"></label>
         </div>
       </div>
     </div>
@@ -128,7 +144,10 @@
     </div>
     <div class="modal">
       <div class="modal__items">
-        <p>Ваш заказ:</p>
+        <div class="modal__title">
+          <p>Ваш заказ:</p>
+          <div class="modal__close">✕</div>
+        </div>
         <hr />
         <form action="https://projector-site.glitch.me/submit">
           <span>Ваше имя</span>
@@ -142,35 +161,20 @@
           <input type="submit" class="submit" value="Оформить заказ" />
         </form>
       </div>
-      <div class="modal__close">
-        <svg class="t706__cartwin-close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
-            <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
-              x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-            <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) "
-              x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-          </g>
-        </svg>
-      </div>
     </div>
   </div>
-  <!--<script>
+  <script>
     $(".modal").hide()
-    $("*").on("click", (e) => {
-      if ($(e.target).is(".active, .modal__items, .modal__items p, .modal__items span, .modal__items form, .modal__items form input")) {
-        return false
-      }
-
-      $(".modal").hide()
-      $("body").css("overflow-y", "scroll")
-    })
     const active = () => {
       $(".modal").css("display", "flex")
       $(".modal").css("backgroundColor", "rgba(0, 0, 0, .8)")
-      $("body").css("overflow", "hidden")
+      $("body").css("overflow-y", "hidden")
     }
-  </script>-->
+    $(".modal__close").on("click", () => {
+      $(".modal").hide()
+      $("body").css("overflow-y", "scroll")
+    })
+  </script>
 </body>
 
 </html>
