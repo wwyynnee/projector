@@ -20,6 +20,18 @@ a {
   color: inherit;
 }
 
+s {
+  position: relative;
+  text-decoration: none;
+  color: red;
+}
+s:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: rotate(-12deg);
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -75,7 +87,18 @@ a {
   font-size: 1.375rem;
   color: #919191;
   font-weight: 300;
-  margin: 1.3rem;
+  margin: 1.3rem 1rem;
+}
+.wrapper__content p s:before {
+  border-bottom: 1px solid red;
+  height: 50%;
+}
+.wrapper__content span s {
+  font-size: 2.5rem;
+}
+.wrapper__content span s:before {
+  border-bottom: 2px solid red;
+  height: 75%;
 }
 .wrapper__content button {
   background-color: #3262ff;

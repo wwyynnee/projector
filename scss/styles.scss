@@ -25,6 +25,17 @@ a {
   text-decoration: none;
   color: inherit;
 }
+s {
+	position: relative;
+	text-decoration: none;
+  color: red;
+  &:before {
+    content: "";
+  	position: absolute;
+  	width: 100%;
+  	transform: rotate(-12deg);
+  }
+}
 .wrapper {
   display: flex;
   align-items: center;
@@ -68,7 +79,22 @@ a {
       font-size: 1.375rem;
       color: $text-color;
       font-weight: 300;
-      margin: 1.3rem;
+      margin: 1.3rem 1rem;
+      s {
+        &:before {
+          border-bottom: 1px solid red;
+          height: 50%;
+        }
+      }
+    }
+    span {
+      s {
+        font-size: 2.5rem;
+        &:before {
+          border-bottom: 2px solid red;
+          height: 75%;
+        }
+      }
     }
     button {
       background-color: $color;
